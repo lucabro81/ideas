@@ -1,4 +1,4 @@
-const defrag = (arr, orderObj) => {
+const defrag = (arr, orderArr) => {
 	
 	const state = {}; 
 	
@@ -7,7 +7,7 @@ const defrag = (arr, orderObj) => {
 		state[item] = +(state[item] === undefined) + (state[item]+1 || 0);
 		let position = 0;
 
-		if (orderObj.findIndex((ordItem) => {
+		if (orderArr.findIndex((ordItem) => {
 			position += state[ordItem] || 0;
 			return ordItem === item;
 		}) >= 0) {
